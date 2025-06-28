@@ -1,56 +1,59 @@
-title: "Population Data Analysis – Australian Bureau of Statistics"
+title: "🧮 Population Data Analysis – Australian Bureau of Statistics"
 description: >
-  This Python project performs detailed statistical analysis on demographic datasets provided by the Australian Bureau of Statistics (ABS).
-  It processes real-world population data and administrative area mappings to answer three key demographic research questions – entirely
-  using built-in Python, without any external libraries.
+  A Python-based project that performs statistical analysis on demographic datasets from the Australian Bureau of Statistics (ABS).
+  The project answers key research questions using raw CSV inputs and built-in Python—without relying on external libraries like pandas or numpy.
 
 files:
-  - main.py: "Contains the full implementation to clean, validate, and analyze input CSVs."
-  - SampleData_Areas.csv: "Sample dataset for area mappings"
-  - SampleData_Populations.csv: "Sample dataset for population data"
+  - main.py: Full implementation for reading, cleaning, validating, and analyzing the input data.
+  - SampleData_Areas.csv: Sample CSV file containing SA2-to-SA3 area mappings.
+  - SampleData_Populations.csv: Sample CSV file with population data distributed by age groups.
 
 objectives:
-  - "Takes two CSV files as input: one for SA2 to SA3 area mappings, and one for SA2-level population distributions across age groups."
-  - "Computes:"
-  - "1. Largest population areas by age group at the state, SA3, and SA2 levels."
-  - "2. SA3 areas with total population ≥150,000, along with the most populated SA2’s standard deviation."
-  - "3. SA3 areas with ≥15 SA2s, identifying the SA2 pair with highest cosine similarity in age distribution."
+  - Analyze two CSV datasets: area mapping and population distribution by age.
+  - Determine the region with the largest population per age group at state, SA3, and SA2 levels.
+  - Identify SA3 areas with total population ≥ 150,000, and compute standard deviation of the most populated SA2.
+  - Find SA3 regions with ≥ 15 SA2s and the SA2 pair with the highest cosine similarity of age distribution.
 
 features:
-  - "🔍 Dynamic File Type Detection: Auto-identifies population vs area files regardless of input order."
-  - "⚙️ No External Libraries: Fully implemented using core Python — no pandas, csv, or numpy."
-  - "🧠 Advanced Statistics: Computes cosine similarity, standard deviation, and performs population aggregation."
-  - "🔄 Robust Validation: Handles inconsistent files, empty cells, invalid types, duplicates, and mismatches."
-  - "🧪 Debugging Commentary: Includes real-world debugging logs for transparency and learning."
+  - Dynamic file role detection regardless of input order.
+  - No external libraries: entirely built with Python built-ins like open, split, and float.
+  - Calculates cosine similarity, standard deviation, and aggregates population across levels.
+  - Handles invalid input formats, missing data, duplicate SA2 rows, and unmatched keys robustly.
+  - Includes a documented debug log with real-life errors and resolutions.
 
-sample_output:
-  op1:
+output_examples:
+```
+  OP1:
     "0-4": ["Western Australia", "Perth North", "Bayswater"]
     "5-9": ["Victoria", "South East", "Casey Central"]
-  op2:
+  OP2:
     "3":
       "30901": ["309021232", 172932, 2134.2401]
       "30902": ["309021100", 162482, 1982.4553]
-  op3:
+  OP3:
     "Melbourne - Inner East": ["Camberwell", "Hawthorn", 0.9987]
-
+```
 error_handling:
-  - "Checks file extensions and order."
-  - "Validates header format."
-  - "Handles missing fields, empty lines, and inconsistent data."
-  - "Removes duplicate rows and ensures consistent key matching."
-  - "Returns empty outputs with console messages for critical issues."
+  - Validates file extensions and uniqueness.
+  - Detects header structure and missing/empty fields.
+  - Filters out duplicate rows and misaligned entries between datasets.
+  - Returns clear console messages for all critical issues with structured empty outputs.
 
-lessons_debugging:
-  - "Includes annotated debugging insights for common errors (e.g., wrong file order, duplicate rows, inconsistent values)."
-  - "Documented within comments and the main() function."
+debugging_documentation:
+  - Issue 1: Input file order mismatch resolved using column-based file identification.
+  - Issue 2: Duplicate rows caused by inconsistent formatting fixed via normalized comparison.
+  - Issue 3: Crashes from inconsistent return values in error branches fixed for reliability.
 
-usage: |
-  python main.py <AreaFile.csv> <PopulationFile.csv>
-  # Ensure both CSV files are formatted correctly, as shown in the provided samples.
+usage: >
+  Run the script using:
+  ```
+  `python main.py <AreaFile.csv> <PopulationFile.csv>`
+  ```
+  Ensure files follow the format shown in the sample datasets provided.
 
 author:
   name: "Nitya Rajender Arya"
-  education: "Master's in Data Science"
+  role: "Master’s in Data Science"
   institution: "University of Western Australia"
   github: "https://github.com/nitya-s333"
+
