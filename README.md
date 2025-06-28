@@ -1,7 +1,6 @@
-``
-  # 🧮 Population Data Analysis – Australian Bureau of Statistics
+# 🧮 Population Data Analysis – Australian Bureau of Statistics
 
-  This Python project performs detailed statistical analysis on demographic datasets provided by the Australian Bureau of Statistics (ABS). It processes real-world population data and administrative area mappings to answer three key demographic research questions – entirely using built-in Python, without any external libraries.
+This Python project performs detailed statistical analysis on demographic datasets provided by the Australian Bureau of Statistics (ABS). It processes real-world population data and administrative area mappings to answer three key demographic research questions – entirely using built-in Python, without any external libraries.
 
   ---
 
